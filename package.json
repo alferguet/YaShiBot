@@ -1,0 +1,37 @@
+{
+  "name": "yashibot",
+  "version": "0.0.1",
+  "description": "Utility discord bot for CommuniTEA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RinsedSloth/YaShiBot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "tea"
+  ],
+  "author": "RinsedSloth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RinsedSloth/YaShiBot/issues"
+  },
+  "homepage": "https://github.com/RinsedSloth/YaShiBot#readme",
+  "dependencies": {
+    "@types/node": "^12.7.1",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.0.0",
+    "eslint": "^6.1.0",
+    "googleapis": "^39.2.0",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1"
+  }
+}
