@@ -26,10 +26,7 @@ export class GlossaryManager {
   }
 
   getDefinition(key: string): string {
-    console.log(key.toLowerCase(), this.glossary.has('ys'))
-    const value = this.glossary.get(key.toLowerCase());
-    console.log(value, this.glossary);
-    return value;
+    return this.glossary.get(key.toLowerCase());;
   }
 
   parseGlossary(rows: string[][]): void {

@@ -12,7 +12,6 @@ export class MessageManager {
     async process(message: Discord.Message) {
         const messageContent = message.content.trim();
         if (messageContent.startsWith('ysb!')) {
-            console.log('message for bot')
             const userRequest = messageContent.split('!')[1].trim();
             const parameters = userRequest.split(' ');
             const module = parameters[0];
