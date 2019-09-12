@@ -26,7 +26,7 @@ export class GlossaryManager {
   }
 
   getDefinition(key: string): string {
-    return this.glossary.get(key.toLowerCase());;
+    return this.glossary.get(key.toLowerCase());
   }
 
   parseGlossary(rows: string[][]): void {
