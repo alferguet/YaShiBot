@@ -17,7 +17,6 @@ export class MessageManager {
                 const parameters = userRequest.split(' ');
                 const module = parameters[0];
                 const commandData = parameters[1];
-                console.log(userRequest, parameters, module, commandData);
                 switch(module){
                     case ('glossary'):
                         message.channel.send(this.glossaryManager.getDefinition(commandData));
