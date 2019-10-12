@@ -16,23 +16,23 @@
     "tea"
   ],
   "author": "RinsedSloth",
-  "license": "ISC",
+  "license": "GPL",
   "bugs": {
     "url": "https://github.com/RinsedSloth/YaShiBot/issues"
   },
   "homepage": "https://github.com/RinsedSloth/YaShiBot#readme",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
     "discord.js": "^11.5.1",
     "dotenv": "^8.1.0",
-    "eslint": "^6.3.0",
     "googleapis": "^39.2.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",
     "@types/gapi": "0.0.39",
-    "@types/node": "^12.7.5"
+    "@types/node": "^12.7.12",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.5.1"
   }
 }

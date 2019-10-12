@@ -1,5 +1,5 @@
 import * as Discord from 'discord.js';
-import { GlossaryManager } from "./glossary.manager";
+import { GlossaryManager } from './modules/glossary.manager';
 
 export class MessageManager {
 
@@ -21,6 +21,8 @@ export class MessageManager {
                     case ('glossary'):
                         message.channel.send(this.glossaryManager.getDefinition(commandData));
                         break;
+                    case ('help'):
+                        message.channel.send(`WIP`)
                     default:
                         message.channel.send(`The request doesn't match any features of this bot`);
                         break;
