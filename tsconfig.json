@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "declaration": true,
+        "removeComments": true,
+        "resolveJsonModule": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es2020",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "baseUrl": "src",
+        "paths": {
+            "@/*": [
+                "./*"
+            ]
+        },
+        "incremental": true
+    },
+    "include": [
+        "src/**/*",
+        ".eslintrc.js"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
