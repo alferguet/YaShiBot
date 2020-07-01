@@ -17,7 +17,7 @@ import { MessageManager } from './message-manager'
         })
         client.on('message', message => {
             messageManager.process(message)
-                .catch(err => console.log(`Error caught processing message outside of the instance: ${err.message}`))
+                .catch(err => console.log(`The message couldn't be processed: ${err.message}`))
         })
         return await client.login(process.env.BOT_TOKEN)
      }

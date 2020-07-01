@@ -15,7 +15,7 @@ export class GlossaryManager {
     job.start()
   }
 
-  async getGlossary(): Promise<void> {
+  private async getGlossary(): Promise<void> {
     const sheets = google.sheets('v4')
     const res = await sheets.spreadsheets.values.get({
       auth: process.env.G_API_KEY,
@@ -29,11 +29,7 @@ export class GlossaryManager {
     this.parseGlossary(rows)
   }
 
-  getDefinition(key: string): string {
-    return this.glossary.get(key.toLowerCase())
-  }
-
-  parseGlossary(rows: string[][]): void {
+  private parseGlossary(rows: string[][]): void {
     this.glossary = new Map<string, string>()
     for (const row of rows) {
       if (row[0] && row[1]) {
@@ -42,5 +38,9 @@ export class GlossaryManager {
         }
       }
     }
+  }
+
+  getDefinition(key: string): string {
+    return this.glossary.get(key.toLowerCase())
   }
 }
