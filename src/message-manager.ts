@@ -10,7 +10,7 @@ export class MessageManager {
 
   async process(message: Discord.Message): Promise<void> {
     const messageContent = message.content.trim()
-    if (messageContent.startsWith('ysb!')) {
+    if (messageContent.toLowerCase().startsWith('ysb!')) {
       const userRequest = messageContent.split('!')[1].trim()
       const parameters = userRequest.split(' ')
       const module = parameters[0]
