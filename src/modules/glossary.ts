@@ -33,14 +33,20 @@ export class GlossaryManager {
     this.glossary = new Map<string, string>()
     for (const row of rows) {
       if (row[0] && row[1]) {
-        for (const entry of row[0].split(',')) {
-          this.glossary.set(entry.trim().toLowerCase(), row[1])
+        try {
+          for (const entry of row[0].split(',')) {
+            this.glossary.set(entry.trim().toLowerCase(), row[1])
+          }
+        } catch (err) {
+          console.log(`Failed to parse ${row}: ${err.messge}`)
         }
       }
     }
   }
 
-  getDefinition(key: string): string {
-    return this.glossary.get(key.toLowerCase())
+  getDefinition(keys: string[]): string {
+    return [' \n', ...keys].reduce(
+      (acc, key) => `${acc}\n${this.glossary.get(key.toLowerCase())}`,
+    )
   }
 }
