@@ -10,11 +10,12 @@ export class MessageManager {
 
   async process(message: Discord.Message): Promise<void> {
     const messageContent = message.content.trim()
-    if (messageContent.toLowerCase().startsWith('ysb!')) {
-      const userRequest = messageContent.split('!')[1].trim()
-      const parameters = userRequest.split(' ')
-      const module = parameters[0]
-      const commandData = parameters[1]
+    const regex = /([Yy][Ss][bB])!\s([A-z]*)\s(.*)/
+    const parsedMessage = messageContent.match(regex)
+
+    if (parsedMessage.length == 4) {
+      const module = parsedMessage[2].toLowerCase()
+      const commandData = parsedMessage[3].toLowerCase()
       switch (module) {
         case 'glossary':
           await message.channel.send(
