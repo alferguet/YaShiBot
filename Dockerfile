@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 RUN npm install --silent
 RUN npm install --silent -g typescript
-RUN npm build
+RUN npm run build
 RUN npm prune --silent --production
 
 

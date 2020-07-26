@@ -6,4 +6,5 @@ async function run() {
   await initiateBot()
 }
 
-run().catch(err => console.log(`Bot initialization failed: ${err.message}`))
+run().catch((err) => console.log(`Bot initialization failed: ${err.message}`))
+
