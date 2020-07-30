@@ -1,6 +1,7 @@
 import * as Discord from 'discord.js'
 import { GlossaryManager } from './modules/glossary'
 import { BabelcarpManager } from './modules/babelcarp'
+import { HELP_MESSAGE, INCORRECT_FEATURE } from './messages'
 
 export class MessageManager {
   private readonly glossaryManager: GlossaryManager
@@ -27,10 +28,10 @@ export class MessageManager {
           answer = await this.babelcarpManager.search(commandData)
           break
         case 'help':
-          answer = 'Bot usage: ysb! glossary <term to search>'
+          answer = HELP_MESSAGE
           break
         default:
-          answer = `The request doesn't match any features of this bot`
+          answer = INCORRECT_FEATURE
           break
       }
       await message.channel.send(answer)
