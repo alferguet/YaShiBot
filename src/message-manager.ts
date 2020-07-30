@@ -13,13 +13,15 @@ export class MessageManager {
   }
 
   async process(message: Discord.Message): Promise<void> {
-    const messageContent = message.content.trim()
-    if (messageContent.startsWith('ysb!')) {
-      const userRequest = messageContent.split('!')[1].trim()
-      const parameters = userRequest.split(' ')
-      const module = parameters[0]
-      const commandData = parameters.slice(1)
+    const messageContent = message.content.trim().toLowerCase()
+    const regex = /([Yy][Ss][bB])!\s([A-z]*)\s(.*)/
+    const parsedMessage = messageContent.match(regex)
+
+    if (parsedMessage.length == 4) {
+      const module = parsedMessage[2]
+      const commandData = parsedMessage[3].split(' ')
       let answer: string
+
       switch (module) {
         case 'glossary':
           answer = this.glossaryManager.getDefinition(commandData)
