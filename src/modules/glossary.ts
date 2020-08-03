@@ -46,7 +46,10 @@ export class GlossaryManager {
 
   getDefinition(keys: string[]): string {
     return [' \n', ...keys].reduce(
-      (acc, key) => `${acc}\n${this.glossary.get(key.toLowerCase())}`,
+      (acc, key) =>
+        `${acc}\n${
+          this.glossary.get(key.toLowerCase()) || `No entry found for ${key}`
+        }`,
     )
   }
 }

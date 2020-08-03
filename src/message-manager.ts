@@ -14,12 +14,12 @@ export class MessageManager {
 
   async process(message: Discord.Message): Promise<void> {
     const messageContent = message.content.trim().toLowerCase()
-    const regex = /([Yy][Ss][bB])!\s+([A-z]*)\s+(.*)/
+    const regex = /^([Yy][Ss][bB])!\s*([A-z]*)\s*(.*)/
     const parsedMessage = messageContent.match(regex)
 
-    if (parsedMessage.length === 4) {
+    if (parsedMessage) {
       const module = parsedMessage[2]
-      const commandData = parsedMessage[3].split(' ')
+      const commandData = (parsedMessage[3] || '').split(' ')
       let answer: string
 
       switch (module) {
